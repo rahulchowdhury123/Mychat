@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<style>
+  :root {
+    --clr-neon: hsl(317 100% 54%);
+    --clr-bg: hsl(323 21% 16%);
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  /* body {
+    margin: 0px 250px;
+    max-width: 800px;
+    padding: 18px 0px;
+} */
+
+  /* .container {
+  border: 2px solid #ede5ea;
+  background-color: #f5ebf2;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 180px 0;
+} */
+
+  /* .darker {
+  border-color: #ccc;
+  background-color: #ddd;
+}  */
+
+  /* .container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.container img {
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.container img.right {
+  float: right;
+  margin-left: 20px;
+  margin-right:0;
+}
+
+.time-right {
+  float: right;
+  color: #aaa;
+}
+
+.time-left {
+  float: left;
+  color: #999;
+} */
+</style>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+</head>
+
+<style>
+  /* body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: var(--clr-bg);
+  font-family: "Balsamiq Sans", cursive;
+  color: var(--clr-neon);
+  padding-right: 10rem;
+} */
+
+  body {
+    text-align: center;
+    align-items: center;
+    margin-left: 50px;
+    background-image: url("https://cdn.wallpapersafari.com/74/64/SqsDew.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .neon-button {
+    font-size: 4mm;
+
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--clr-neon);
+    border: var(--clr-neon) 0.125em solid;
+    padding: 0.25em 1em;
+    border-radius: 0.25em;
+
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+
+    box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
+
+    position: relative;
+  }
+
+  .neon-button::before {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    background: var(--clr-neon);
+    top: 120%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+    filter: blur(1em);
+    opacity: 0.7;
+  }
+
+  .neon-button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 2em 0.5em var(--clr-neon);
+    opacity: 0;
+    background-color: var(--clr-neon);
+    z-index: -1;
+    transition: opacity 100ms linear;
+  }
+
+  .neon-button:hover,
+  .neon-button:focus {
+    color: var(--clr-bg);
+    text-shadow: none;
+  }
+
+  .neon-button:hover::before,
+  .neon-button:focus::before {
+    opacity: 1;
+  }
+
+  .neon-button:hover::after,
+  .neon-button:focus::after {
+    opacity: 1;
+  }
+
+  .custom-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #6c757d;
+    color: #fff;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  /* Hover effect for the buttons */
+  .custom-button:hover {
+    background-color: #495057;
+  }
+
+  /* Active effect for the buttons */
+  .custom-button:active {
+    background-color: #343a40;
+  }
+
+  p {
+  -webkit-text-stroke: 0.3px black;
+}
+</style>
+
+<body class="bg-dark p-2 text-white bg-opacity-100">
+  <!-- As a link -->
+
+  <img src="https://cdn-icons-png.flaticon.com/512/134/134909.png" style="height: 100px; margin-left: -165vh; margin-top: 3vh;
+  filter: invert(1);">
+  <p style="
+  font-size: 45px;
+  margin-top: -14vh;
+  margin-bottom: 2rem;
+  font-family: initial;
+  font-variant: small-caps;
+  background: linear-gradient(to right, #f12711, #f5af19);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+">Dive into Let's Chat!!</p>
+
+  <p style="
+  margin-top: 0px;
+  margin-bottom: 1rem;
+  margin-left: -164vh;
+  font-weight: bolder;
+  font-family: cursive;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+">Let's Chat</p>
+
+  <p style="
+  margin-top: -19px;
+  margin-bottom: 1rem;
+  margin-left: -162vh;
+  font-size: smaller;
+  background: linear-gradient(to right, #f12711, #f5af19);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+">Chat with anyone, anywhere, anytime!</p>
+
+  <p style="
+  margin-top: -45px;
+  margin-bottom: 1rem;
+  font-size: x-large;
+  font-weight: 800;
+  font-family: math;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+">Reset your password...</p>
+  <br>
+
+<style>
+    /* Styling for the modal */
+    
+    .modal {
+      display: none; /* Hide the modal by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top of everything */
+    
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgba(0,0,0,0.4); /* Black background with opacity */
+    }
+    .modal-content {
+      background-color: #424242;
+      margin: 1% 37%; /* 15% from the top and centered */
+      padding: 6px;
+      border: 1px solid #888;
+      width: 30%; /* Width of the modal */
+    }
+    /* Styling for the close button */
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+</style>
+
+  {% if error %}
+  <!-- <div class="alert alert-danger" role="alert"> -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Oops! Username not found.</h2>
+     
+      </div>
+    </div>
+    <script>
+      // Get the modal
+      var modal = document.getElementById("myModal");
+      // Get the close button
+      var closeBtn = document.getElementsByClassName("close")[0];
+      // When the user clicks on the close button, hide the modal
+      closeBtn.onclick = function() {
+        modal.style.display = "none";
+      }
+      // Show the modal
+      modal.style.display = "block";
+    </script>
+  <!-- </div> -->
+{% endif %}
+  <div>
+    <form style="align-items: center; margin-left: 15lh;" id=check-form action="/forgot" method="POST">
+      {% csrf_token %}
+      <div class="row mb-3">
+        <label style="width: 10%;" for="em" class="col-sm-2 col-form-label">Username</label>
+        <div class="col-sm-6">
+          <input type="email" size="10" required class="form-control" name="nm">
+        </div>
+      </div>
+      <!-- <div class="row mb-3">
+        <label for="ps" style="width: 10%;" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-6">
+          <input type="email" size="10" required class="form-control" name="em">
+        </div>
+      </div> -->
+      <div class="row mb-3">
+        <label for="ps" style="width: 10%;" class="col-sm-2 col-form-label">New Password</label>
+        <div class="col-sm-6">
+          <input type="password" size="1000" required class="form-control" name="pss">
+        </div>
+      </div>
+
+      <button  type="submit" class="btn btn-primary" name="sl" style=" margin-left: -60vh;"
+        value=1 >Submit</button>
+    </form>
+  </div>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+
+</body>
+
+
+
+
+</html>

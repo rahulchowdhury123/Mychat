@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Recipient List</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-image: url("https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1600&q=80");
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .chat-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #dd1818;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        .chat-header {
+            display: flex;
+            align-items: center;
+            background-color: #09591a;
+            color: #fff;
+            padding: 10px;
+        }
+
+        .chat-header h2 {
+            flex-grow: 1;
+            font-size: 20px;
+            font-weight: normal;
+            margin: 0;
+        }
+
+        .recipient-list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .recipient-list-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            cursor: pointer;
+            background-color: #289452eb;
+            transition: background-color 0.3s ease;
+        }
+
+        .recipient-list-item:hover {
+            background-color: #f5f5f5;
+        }
+
+        .recipient-list-item img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .recipient-list-item .recipient-info {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .recipient-list-item .recipient-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .recipient-list-item .recipient-message {
+            font-size: 14px;
+            color: #888;
+        }
+
+        .chat-footer {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: #ece5dd;
+        }
+
+        .chat-footer input[type="text"] {
+            flex-grow: 1;
+            border: none;
+            padding: 10px;
+            border-radius: 20px;
+            margin-right: 10px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .chat-footer input[type="text"]::placeholder {
+            color: #aaa;
+        }
+
+        .chat-footer button {
+            background-color: #075e54;
+            color: #c62020;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .chat-footer button:hover {
+            background-color: #0b965c;
+        }
+    </style>
+</head>
+
+<!-- <script>
+    location.reload();
+</script> -->
+
+
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>Recipient List</h2>
+        </div>
+
+        <form action="checkrecipent" method="POST">
+            {% csrf_token %}
+            <div class="recipient-list" id="display">
+                <input type="hidden" name="username" id="username" value="{{usern}}">
+                {% for value in my_values %}
+                {% if value.name != usern %}
+                <!-- <input type="hidden" name="room_id" id="room_id" value="{{value.name}}"> -->
+                <button type="submit"  name="room_id" id="room_id"
+                    class='recipient-list-item' value="{{value.name}}"><strong>{{value.nickname}}</strong></button>
+                {% endif %}
+                {% endfor %}
+
+
+
+            </div>
+        </form>
+    </div>
+</body>
